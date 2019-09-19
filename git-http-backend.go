@@ -131,7 +131,7 @@ func serviceRpc(hr HandlerReq) {
 	w.Header().Set("X-Content-Type-Options", "nosniff")
 	w.WriteHeader(http.StatusOK)
 
-	env := []string{}
+	env := os.Environ()
 
 	if config.DefaultEnv != "" {
 		env = append(env, config.DefaultEnv)
